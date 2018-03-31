@@ -16,11 +16,24 @@ const NavLink = styled.a`
 const Nav = styled.nav`
   margin: 0 auto;
   text-align: center;
-  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  @media (max-width: 768px) {
+    background: #ffff004f;
+    padding: 6px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+  }
 `;
 
 const NavList = styled.ul`
   list-style: none;
+  padding: 0;
 `;
 
 class Navigation extends React.Component {

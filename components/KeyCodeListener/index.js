@@ -18,11 +18,12 @@ const MainKey = styled.h2`
 
 const KeySection = styled.p`
   display: block;
-  margin-top: 40px;
+  margin-top: 50px;
 `;
 
 const PrintKey = styled.h3`
   font-size: 25px;
+  font-weight: 300;
   margin: 0;
 `;
 
