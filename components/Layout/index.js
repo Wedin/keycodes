@@ -17,6 +17,7 @@ const CenterWrapper = styled.div`
 
 const InnerWrapper = styled.div`
   max-width: 550px;
+  min-width: 300px;
   margin: 20px 0;
 `;
 

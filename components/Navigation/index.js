@@ -42,11 +42,11 @@ class Navigation extends React.Component {
     const nextLink =
       router.pathname === "/" ? (
         <Link href="/from-keycode">
-          <NavLink href="/from-keycode">Get key from key code instead</NavLink>
+          <NavLink href="/from-keycode">I know the key code, tell me the key</NavLink>
         </Link>
       ) : (
         <Link href="/">
-          <NavLink href="/">Get the key code from key instead</NavLink>
+          <NavLink href="/">Get the key code from key press instead</NavLink>
         </Link>
       );
     return (

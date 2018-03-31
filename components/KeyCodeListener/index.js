@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import keyLookup from "./keyLookup";
+import lookupKeyCode from "../keyCodes";
 import Start from "../Start";
 
 const KeyCodes = styled.div`
@@ -16,7 +16,7 @@ const MainKey = styled.h2`
   margin: 25px 0;
 `;
 
-const KeySection = styled.p`
+const KeySection = styled.div`
   display: block;
   margin-top: 50px;
 `;
@@ -29,7 +29,7 @@ const PrintKey = styled.h3`
 
 const OutLink = styled.a``;
 
-export default class IndexPage extends React.Component {
+export default class KeyCodeListener extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -58,7 +58,7 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    const lookupCode = keyLookup(this.state.currentKeyCode);
+    const lookupCode = lookupKeyCode(this.state.currentKeyCode);
 
     if (!this.state.currentKeyCode) {
       return <Start />;
