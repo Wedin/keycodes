@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint './**/*.js' --fix --ext .js --ignore-pattern next",
+    "prettier": "prettier  --config ./.prettierrc '{components,pages,__{tests}__}/**/*.js' --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Wedin",
@@ -17,6 +18,7 @@
     "next": "^5.1.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "prop-types": "^15.6.1",
     "styled-components": "^3.2.5"
   },
   "devDependencies": {
@@ -27,7 +29,6 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
-    "prettier": "^1.11.1",
-    "prop-types": "^15.6.1"
+    "prettier": "^1.11.1"
   }
 }

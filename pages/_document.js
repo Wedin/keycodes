@@ -1,12 +1,12 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet, injectGlobal } from 'styled-components';
+import Document, { Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet, injectGlobal } from "styled-components";
 
 // This is OK
 /* eslint-disable */
 injectGlobal`
   html, body {
-    height: 100%;
-    width: 100%;
+    // height: 100%;
+    // width: 100%;
   }
   /* Hack to style __next div, will be solved in v6 of react */
   body > div:first-child,
@@ -26,14 +26,14 @@ injectGlobal`
   }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: monospace;
+    line-height: 1.25;
+    font-size: 16px;
   }
   code,
-  kbd,
-  samp,
   pre {
-    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 1em;
   }
 `;
 /* eslint-enable */

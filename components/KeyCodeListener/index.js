@@ -1,22 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
-import keyLookup from './keyLookup';
+import React from "react";
+import styled from "styled-components";
+import keyLookup from "./keyLookup";
+import Start from "../Start";
 
 const KeyCodes = styled.div`
   text-align: center;
-`;
-
-const Title = styled.h1`
-  font-size: 20px;
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 20px;
+  background: #003cda;
+  padding: 40px;
+  color: white;
 `;
 
 const MainKey = styled.h2`
   font-size: 120px;
-  margin: 10px 0;
+  font-weight: 300;
+  margin: 25px 0;
 `;
+
+const KeySection = styled.p`
+  display: block;
+  margin-top: 40px;
+`;
+
+const PrintKey = styled.h3`
+  font-size: 25px;
+  margin: 0;
+`;
+
+const OutLink = styled.a``;
 
 export default class IndexPage extends React.Component {
   constructor(props) {
@@ -26,18 +36,18 @@ export default class IndexPage extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyEvent, false);
+    window.addEventListener("keydown", this.handleKeyEvent, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyEvent, false);
+    window.removeEventListener("keydown", this.handleKeyEvent, false);
   }
 
   handleKeyEvent(event) {
     if (event.defaultPrevented) {
       return; // Do nothing if the event was already processed
     }
-    console.log(event.key, event.which || event.keyCode);
+    // console.log(event.key, event.which || event.keyCode);
 
     this.setState({
       currentKey: event.key,
@@ -49,27 +59,30 @@ export default class IndexPage extends React.Component {
   render() {
     const lookupCode = keyLookup(this.state.currentKeyCode);
 
-    const keyCodeContent = this.state.currentKeyCode ? (
-      <KeyCodes>
-        <div>{lookupCode}</div>
-        <MainKey>{this.state.currentKeyCode}</MainKey>
-        {this.state.currentKey && (
-          <div>
-            <code>Event.key:</code> {this.state.currentKey}
-          </div>
-        )}
-      </KeyCodes>
-    ) : (
+    if (!this.state.currentKeyCode) {
+      return <Start />;
+    }
+
+    return (
       <div>
-        <Title>
-          Press any key to get the KeyboardEvent key code{' '}
-          <span aria-label="sunglasses" role="img">
-            😎
-          </span>
-        </Title>
+        <KeyCodes>
+          <div>
+            <PrintKey>{lookupCode}</PrintKey>
+          </div>
+          <MainKey>{this.state.currentKeyCode}</MainKey>
+        </KeyCodes>
+        {this.state.currentKey && (
+          <KeySection>
+            <code>Event.key:</code> {this.state.currentKey}
+            <p>
+              Learn more about <code>Event.key</code> at the{" "}
+              <OutLink href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key" target="_blank" rel="noopener noreferrer">
+                MDN docs
+              </OutLink>
+            </p>
+          </KeySection>
+        )}
       </div>
     );
-
-    return <div>{keyCodeContent && keyCodeContent}</div>;
   }
 }
