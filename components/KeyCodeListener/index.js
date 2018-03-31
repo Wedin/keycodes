@@ -48,8 +48,6 @@ export default class KeyCodeListener extends React.Component {
     if (event.defaultPrevented) {
       return; // Do nothing if the event was already processed
     }
-    // console.log(event.key, event.which || event.keyCode);
-
     this.setState({
       currentKey: event.key,
       currentKeyCode: event.which || event.keyCode,

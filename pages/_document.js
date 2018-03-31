@@ -4,10 +4,6 @@ import { ServerStyleSheet, injectGlobal } from "styled-components";
 // This is OK
 /* eslint-disable */
 injectGlobal`
-  html, body {
-    // height: 100%;
-    // width: 100%;
-  }
   /* Hack to style __next div, will be solved in v6 of react */
   body > div:first-child,
     #__next {

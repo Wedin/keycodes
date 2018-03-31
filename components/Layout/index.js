@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Navigation from "../Navigation";
+import GithubSource from "../GithubSource";
 
 const CenterWrapper = styled.div`
   width: 100%;
@@ -29,6 +30,7 @@ export default class Layout extends React.Component {
           <InnerWrapper>{this.props.children}</InnerWrapper>
         </CenterWrapper>
         <Navigation />
+        <GithubSource />
       </React.Fragment>
     );
   }
@@ -41,6 +43,3 @@ Layout.propTypes = {
 Layout.defaultProps = {
   children: [],
 };
-
-// Until KeyboardEvent.key is used by all modern browsers
-// https://caniuse.com/#feat=keyboardevent-key
