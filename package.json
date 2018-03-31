@@ -1,5 +1,9 @@
 {
   "name": "keycodes",
+  "now": {
+    "name": "keycodes",
+    "alias": "keycodes.now.sh"
+  },
   "version": "1.0.0",
   "main": "ddd.js",
   "scripts": {
@@ -8,6 +12,8 @@
     "start": "next start",
     "lint": "eslint './**/*.js' --fix --ext .js --ignore-pattern next",
     "prettier": "prettier  --config ./.prettierrc '{components,pages,__{tests}__}/**/*.js' --write",
+    "deploy": "now --public && now alias",
+    "clean-deploy": "now rm keycodes --safe --yes",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Daniel Wedin",
