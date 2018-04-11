@@ -18,6 +18,13 @@ const Title = styled.h1`
   margin-bottom: 20px;
 `;
 
+const SubTitle = styled.h2`
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+`;
+
 const Start = () => (
   <StartWrapper>
     <Title>
@@ -28,6 +35,7 @@ const Start = () => (
         </span>
       </Emoji>
     </Title>
+    <SubTitle>A tool to translate Javascript key codes</SubTitle>
   </StartWrapper>
 );
 

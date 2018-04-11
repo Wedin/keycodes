@@ -48,6 +48,7 @@ export default class MyDocument extends Document {
         <Head>
           <title>Keycodes</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="description" content="Look up Javascript key codes for keypress events and map kap keys to number" />
           <meta charSet="utf-8" />
           {this.props.styleTags}
         </Head>
