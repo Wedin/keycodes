@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import Router from "next/router";
 import Navigation from "../Navigation";
 import GithubSource from "../GithubSource";
+import * as gtag from "../../lib/gtag";
 
 const CenterWrapper = styled.div`
   width: 100%;
@@ -21,6 +23,10 @@ const InnerWrapper = styled.div`
   min-width: 300px;
   margin: 20px 0;
 `;
+
+Router.onRouteChangeComplete = url => {
+  gtag.pageview(url);
+};
 
 export default class Layout extends React.Component {
   render() {

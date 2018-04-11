@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet, injectGlobal } from "styled-components";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
 // This is OK
 /* eslint-disable */
@@ -46,10 +47,23 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>Keycodes</title>
+          <title>Javascript Key Codes</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="description" content="Look up Javascript key codes for keypress events and map kap keys to number" />
           <meta charSet="utf-8" />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+          {/* eslint-disable */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `,
+            }}
+          />
+          {/* eslint-enable */}
           {this.props.styleTags}
         </Head>
         <body>
